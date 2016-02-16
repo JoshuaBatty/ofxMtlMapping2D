@@ -44,7 +44,7 @@ void ofxMtlMapping2D::init(int width, int height, string mappingXmlFilePath, str
     _fbo.allocate(width, height, GL_RGBA, numSample);
 
     // ----
-    ofxMtlMapping2DSettings::infoFont.loadFont("mapping/controls/ReplicaBold.ttf", 10);
+    ofxMtlMapping2DSettings::infoFont.loadFont("Mapping/controls/ReplicaBold.ttf", 10);
     
     // ----
     _mappingXmlFilePath = mappingXmlFilePath;
@@ -451,7 +451,7 @@ void ofxMtlMapping2D::keyPressed(ofKeyEventArgs &e)
             loadShapesList();
             break;
             
-        case 'm':
+        case 'M':
             ofxMtlMapping2DControls::mapping2DControls()->toggle();
             break;
             

@@ -23,7 +23,7 @@ ofxMtlMapping2DControls * ofxMtlMapping2DControls::mapping2DControls()
 {
     if (_mapping2DControls == NULL) {
         ofLog(OF_LOG_WARNING, "ofxMtlMapping2DControls uses a default path to an xml file for saving and loading settings!");
-        _mapping2DControls = new ofxMtlMapping2DControls(kControlsMappingToolsPanelWidth, "mapping/controls/mapping.xml");
+        _mapping2DControls = new ofxMtlMapping2DControls(kControlsMappingToolsPanelWidth, "Mapping/controls/mapping.xml");
     }
     return _mapping2DControls;
 }
@@ -98,15 +98,15 @@ ofxMtlMapping2DControls::ofxMtlMapping2DControls(int width, const string& file)
     
     
     // --- Fullscreen
-    _fullscreenExpandIcon.loadImage("GUI/expand.png");
-    _fullscreenContractIcon.loadImage("GUI/contract.png");
+    _fullscreenExpandIcon.loadImage("Images/Mapping/expand.png");
+    _fullscreenContractIcon.loadImage("Images/Mapping/contract.png");
     
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/expand.png", kSettingMappingFullscreen));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/expand.png", kSettingMappingFullscreen));
     
     // Edit
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/edit.png", kSettingMappingEditShapes));
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/file-down.png", kSettingMappingSave));
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/file-up.png", kSettingMappingLoad));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/edit.png", kSettingMappingEditShapes));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/file-down.png", kSettingMappingSave));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/file-up.png", kSettingMappingLoad));
 
 
     // add mapping controls Output / Input
@@ -114,17 +114,17 @@ ofxMtlMapping2DControls::ofxMtlMapping2DControls(int width, const string& file)
     spacer->setDrawFill(false);
     
     _toolsCanvas->addWidgetDown(spacer);
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/projo.png", kSettingMappingModeOutput));
-    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "GUI/texture.png", kSettingMappingModeInput));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/projo.png", kSettingMappingModeOutput));
+    _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, false, "Images/Mapping/texture.png", kSettingMappingModeInput));
     
 
     // add mapping shape controls
     if (ofxMtlMapping2DSettings::kIsManuallyCreatingShapeEnabled) {
         _toolsCanvas->addWidgetDown(spacer);        
-        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewQuad, "GUI/quad.png", kSettingMappingCreateNewQuad));
-        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewGrid, "GUI/grid.png", kSettingMappingCreateNewGrid));
-        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewTriangle, "GUI/triangle.png", kSettingMappingCreateNewTriangle));
-        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewMask, "GUI/mask.png", kSettingMappingCreateNewMask));
+        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewQuad, "Images/Mapping/quad.png", kSettingMappingCreateNewQuad));
+        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewGrid, "Images/Mapping/grid.png", kSettingMappingCreateNewGrid));
+        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewTriangle, "Images/Mapping/triangle.png", kSettingMappingCreateNewTriangle));
+        _toolsCanvas->addWidgetDown(new ofxUIImageToggle(kToggleSize, kToggleSize, _createNewMask, "Images/Mapping/mask.png", kSettingMappingCreateNewMask));
     }
     
     // add mapping shape's details
