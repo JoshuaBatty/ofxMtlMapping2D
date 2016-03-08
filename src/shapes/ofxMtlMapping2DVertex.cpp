@@ -78,7 +78,7 @@ void ofxMtlMapping2DVertex::drawTop()
     }
     
     //ofCircle(x+11, y+11, 8);
-    ofRect(x+11, y+11, 8, 8);		
+    ofDrawRectangle(x+11, y+11, 8, 8);		
 }
 
 //--------------------------------------------------------------

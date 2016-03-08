@@ -44,7 +44,7 @@ void ofxMtlMapping2D::init(int width, int height, string mappingXmlFilePath, str
     _fbo.allocate(width, height, GL_RGBA, numSample);
 
     // ----
-    ofxMtlMapping2DSettings::infoFont.loadFont("Mapping/controls/ReplicaBold.ttf", 10);
+    ofxMtlMapping2DSettings::infoFont.load("Mapping/controls/ReplicaBold.ttf", 10);
     
     // ----
     _mappingXmlFilePath = mappingXmlFilePath;
@@ -787,7 +787,7 @@ void ofxMtlMapping2D::chessBoard(int nbOfCol)
                 ofSetColor(ofColor::black);
             }
             
-            ofRect(colId * squareSize, rowId * squareSize, squareSize, squareSize);
+            ofDrawRectangle(colId * squareSize, rowId * squareSize, squareSize, squareSize);
         }
     }
     
@@ -795,16 +795,16 @@ void ofxMtlMapping2D::chessBoard(int nbOfCol)
     ofNoFill();
     ofSetColor(ofColor::yellow);
     glLineWidth(8.0f);
-    ofRect(.0f, .0f, boardWidth, boardHeight);
+    ofDrawRectangle(.0f, .0f, boardWidth, boardHeight);
     glLineWidth(1.0f);
     
     ofFill();
     ofSetColor(ofColor::red);
-    ofRect(60.0f, .0f, 20.0f, 20.0f);
+    ofDrawRectangle(60.0f, .0f, 20.0f, 20.0f);
     ofSetColor(ofColor::green);
-    ofRect(80.0f, .0f, 20.0f, 20.0f);
+    ofDrawRectangle(80.0f, .0f, 20.0f, 20.0f);
     ofSetColor(ofColor::blue);
-    ofRect(100.0f, .0f, 20.0f, 20.0f);
+    ofDrawRectangle(100.0f, .0f, 20.0f, 20.0f);
     
     ofSetColor(ofColor::white);
 }

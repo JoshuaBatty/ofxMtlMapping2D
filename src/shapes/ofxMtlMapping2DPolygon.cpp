@@ -144,7 +144,7 @@ void ofxMtlMapping2DPolygon::drawID()
 {
     ofSetHexColor(0x000000);
     ofFill();
-    ofRect(_centroid2D.x - 10, _centroid2D.y - 10, 20, 20);
+    ofDrawRectangle(_centroid2D.x - 10, _centroid2D.y - 10, 20, 20);
     ofSetHexColor(0xFFFFFF);
     
     int xOffset;
