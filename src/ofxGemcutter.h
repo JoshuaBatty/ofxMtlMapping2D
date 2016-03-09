@@ -24,9 +24,10 @@
 #include "ofxSyphon.h"
 #endif
 
+
 #if defined(OFX_GEMCUTTER_USE_VIDEO_PLAYER_OPTION)
     #if defined(TARGET_OSX)
-        #include "ofxAVFVideoPlayer.h"
+//        #include "ofAVFVideoPlayer.h"
     #elif defined(TARGET_WIN32)
 		#include "ofDirectShowPlayer.h"
     #endif
@@ -170,7 +171,7 @@ private:
     ofRectangle _videoRect;
     
     #if defined(TARGET_OSX)
-        ofxAVFVideoPlayer _videoPlayer;
+        ofVideoPlayer _videoPlayer;
     #elif defined(TARGET_WIN32)
 		ofDirectShowPlayer _videoPlayer;    
 		ofTexture tex;

@@ -647,7 +647,7 @@ void ofxGemcutter::updateUiTimer()
     _timeUILastActivation = ofGetElapsedTimeMillis() ;
     
     if (!ofxGemcutterControls::sharedInstance()->isEnabled()) {
-        ofxGemcutterControls::sharedInstance()->toggleVisible();
+       // ofxGemcutterControls::sharedInstance()->toggleVisible();
     }
 }
 
@@ -815,8 +815,8 @@ void ofxGemcutter::keyPressed(ofKeyEventArgs &e)
             loadShapesList();
             break;
             
-        case 'm':
-            //ofxGemcutterControlsSharedInstance().toggleVisible();
+        case 'M':
+            ofxGemcutterControlsSharedInstance().toggleVisible();
             break;
             
         case 's':
@@ -1209,7 +1209,9 @@ void ofxGemcutter::closeOutputWindow()
 void ofxGemcutter::outputWindowClosedEvent(int & i)
 {
     ofRemoveListener(_outputWindow.windowClosedEvent, this, &ofxGemcutter::outputWindowClosedEvent);
+#ifdef OFX_GEMCUTTER_USE_OFX_DETECT_DISPLAYS
     ofxGemcutterControls::sharedInstance()->resetDisplaySelection();
+#endif
 }
 
 
@@ -1343,7 +1345,7 @@ void ofxGemcutter::exitVideoPlayer()
 //--------------------------------------------------------------
 void ofxGemcutter::loadVideo(string filePath)
 {
-    _videoPlayer.loadMovie(filePath);
+    _videoPlayer.load(filePath);
     _videoPlayer.setLoopState(OF_LOOP_NORMAL);
 }
 
